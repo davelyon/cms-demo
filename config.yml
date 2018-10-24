@@ -1,0 +1,48 @@
+backend:
+  # name: git-gateway
+  name: github
+  repo: davelyon/cms-demo # Path to your Github repository
+  branch: master # Branch to update
+
+publish_mode: editorial_workflow
+media_folder: "static/media" # Media files will be stored here
+public_folder: "/media" # The src attribute for uploaded media
+
+collections:
+  - label: "Page SEO Configuration"
+    name: "seo" # Used in routes, e.g., /admin/collections/blog
+    folder: "/locations"
+    create: true
+    delete: true
+    format: json
+    extension: json
+    # editor: 
+    #   preview: false
+    title: "Location"
+    fields:
+      - label: "Company"
+        name: "company"
+        widget: "string"
+        required: true
+      - label: "Name"
+        name: "title"
+        widget: "string"
+        required: true
+      - label: "KW/H"
+        name: "kwh"
+        widget: "number"
+        min: 1
+        max: 100
+        required: true
+      - label: "Latitude"
+        name: "lat"
+        widget: "number"
+        min: 1
+        max: 100
+        required: true
+      - label: "Longitude"
+        name: "long"
+        widget: "number"
+        min: 1
+        max: 100
+        required: true
